@@ -200,3 +200,58 @@ console.log("Rotated array:", rotateArray(arr, k));
     console.log("Rotated array:", rotatedArr);  // [5, 6, 7, 1, 2, 3, 4]
 })();
 
+//Arrow functions
+
+//Print odd numbers in an array
+
+const printOddNumbers = arr => arr.filter(num => num % 2 !== 0);
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const oddNumbers = printOddNumbers(numbers);
+
+console.log("Odd numbers:", oddNumbers);
+
+//Convert all the strings to title caps in a string array
+
+const toTitleCaps = strArray => strArray.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+
+const words = ["hello", "world", "javascript", "programming"];
+const titleCapped = toTitleCaps(words);
+
+console.log("Title caps:", titleCapped);
+
+//Sum of all numbers in an array
+
+const sumArray = arr => arr.reduce((sum, num) => sum + num, 0);
+
+const numbers = [1, 2, 3, 4, 5, 6];
+const totalSum = sumArray(numbers);
+
+console.log("Total sum:", totalSum);
+
+//Return all the prime numbers in an array
+
+const isPrime = num => {
+    if (num < 2) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+};
+
+const getPrimes = arr => arr.filter(isPrime);
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+const primeNumbers = getPrimes(numbers);
+
+// Return all the palindromes in an array
+
+const isPalindrome = str => str === str.split('').reverse().join('');
+
+const findPalindromes = arr => arr.filter(isPalindrome);
+
+const words = ["level", "deified", "hello", "madam", "world"];
+const palindromicWords = findPalindromes(words);
+
+console.log("Palindromic words:", palindromicWords);
+
